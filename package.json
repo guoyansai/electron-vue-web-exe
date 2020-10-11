@@ -1,0 +1,103 @@
+{
+    "name": "electron-vue-web-exe",
+    "version": "1.0.0",
+    "description": "electron-vue-web-exe",
+    "appName": "electron-vue-web-exe",
+    "main": "app/main.js",
+    "scripts": {
+        "dev": "node ./buildClient/dev.js",
+        "devweb": "node ./buildWeb/dev.js",
+        "build": "node ./buildClient/build.js",
+        "buildweb": "node ./buildWeb/build.js"
+    },
+    "author": "Asai.cc",
+    "license": "ISC",
+    "browserslist": [
+        "> 10%",
+        "last 7 versions",
+        "ie >= 9",
+        "firefox >= 20"
+    ],
+    "build": {
+        "asar": true,
+        "productName": "electron-vue-web-exe",
+        "appId": "com.electron.template",
+        "copyright": "Copyright © Asai.cc",
+        "directories": {
+            "output": "pack"
+        },
+        "files": [
+            "app/**"
+        ],
+        "mac": {
+            "identity": "com.electron.templat",
+            "target": [
+                "dmg"
+            ],
+            "artifactName": "${productName}.${ext}",
+            "icon": "src/main/favicon/favicon.icns"
+        },
+        "dmg": {
+            "title": "${productName}",
+            "artifactName": "${productName}.${ext}",
+            "icon": "src/main/favicon/favicon.icns"
+        },
+        "win": {
+            "legalTrademarks": "Copyright © Asai.cc",
+            "publisherName": "electron",
+            "requestedExecutionLevel": "highestAvailable",
+            "target": [
+                {
+                    "target": "nsis",
+                    "arch": [
+                        "ia32"
+                    ]
+                }
+            ],
+            "artifactName": "${productName}.${ext}",
+            "icon": "main/favicon/favicon.ico"
+        },
+        "nsis": {
+            "oneClick": false,
+            "allowToChangeInstallationDirectory": true,
+            "perMachine": true,
+            "allowElevation": true,
+            "artifactName": "${productName}-安装包-V${version}.${ext}",
+            "runAfterFinish": true,
+            "shortcutName": "electron-vue-web-exe"
+        }
+    },
+    "devDependencies": {
+        "@babel/core": "^7.9.6",
+        "@babel/plugin-proposal-function-bind": "^7.8.3",
+        "@babel/plugin-syntax-dynamic-import": "^7.8.3",
+        "@babel/polyfill": "^7.8.7",
+        "@babel/preset-env": "^7.9.6",
+        "adm-zip": "^0.4.16",
+        "archiver": "^5.0.2",
+        "autoprefixer": "^10.0.1",
+        "axios": "^0.20.0",
+        "babel-loader": "^8.1.0",
+        "css-hot-loader": "^1.4.4",
+        "css-loader": "^4.3.0",
+        "electron": "^10.1.3",
+        "electron-builder": "^22.8.1",
+        "electron-settings": "4.0.2",
+        "file-loader": "^6.1.1",
+        "html-webpack-plugin": "^4.5.0",
+        "less": "^3.12.2",
+        "less-loader": "^7.0.2",
+        "mini-css-extract-plugin": "^1.0.0",
+        "postcss-loader": "^4.0.4",
+        "progress-bar-webpack-plugin": "^2.1.0",
+        "url-loader": "^4.1.1",
+        "view-design": "^4.3.2",
+        "vue": "^2.6.12",
+        "vue-loader": "^15.9.3",
+        "vue-router": "^3.4.6",
+        "vue-template-compiler": "^2.6.12",
+        "vuex": "^3.5.1",
+        "webpack": "^4.43.0",
+        "webpack-dev-server": "^3.11.0"
+    }
+}
