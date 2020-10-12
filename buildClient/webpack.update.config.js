@@ -63,10 +63,7 @@ module.exports ={
                         }
                     },
                     {
-                        loader: 'postcss-loader',
-                        options: {
-                            plugins: [Autoprefixer]
-                        }
+                        loader: 'postcss-loader'
                     },
                     {
                         loader: 'less-loader',

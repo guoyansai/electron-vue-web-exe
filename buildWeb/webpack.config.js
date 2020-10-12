@@ -20,7 +20,7 @@ var webpackBaseConfig = {
     output: {
         path: path.resolve(process.cwd(), 'dist'),
         publicPath: '/',
-        filename: `.${context.name}/js/[name]${devMode ?  '' : '-[hash:8]'}.js`,
+        filename: `.${context.name}/js/[name]${devMode ? '' : '-[hash:8]'}.js`,
         chunkFilename: `.${context.name}/js/[name]${devMode ? '' : '-[hash]'}.js`,
     },
     optimization: {
@@ -75,11 +75,9 @@ var webpackBaseConfig = {
                         options: {
                             sourceMap: true
                         }
-                    }, {
-                        loader: 'postcss-loader',
-                        options: {
-                            plugins: [Autoprefixer]
-                        }
+                    },
+                    {
+                        loader: 'postcss-loader'
                     }
                 ])
             },
@@ -94,18 +92,10 @@ var webpackBaseConfig = {
                         }
                     },
                     {
-                        loader: 'postcss-loader',
-                        options: {
-                            plugins: [Autoprefixer]
-                        }
+                        loader: 'postcss-loader'
                     },
                     {
-                        loader: 'less-loader',
-                        options: {
-                            lessOptions: {
-                                javascriptEnabled: true
-                            }
-                        }
+                        loader: 'less-loader'
                     }
                 ])
             },
