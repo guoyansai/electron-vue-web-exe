@@ -32,7 +32,6 @@ const dev = {
         const WebpackDevServer = require('webpack-dev-server');
         const devServerConfig = require('../config/devServerConfig.js');
         const webpackConfig = require('./webpack.config.js');
-        webpackConfig.plugins.push(new webpack.optimize.OccurrenceOrderPlugin(true));
         webpackConfig.plugins.push(new webpack.NoEmitOnErrorsPlugin());
 
         // 输出运行环境

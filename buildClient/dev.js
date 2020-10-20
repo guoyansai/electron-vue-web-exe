@@ -82,7 +82,6 @@ const dev = {
             const WebpackDevServer = require('webpack-dev-server');
             const devServerConfig = require('../config/devServerConfig.js');
             const webpackConfig = require('./webpack.render.config.js');
-            webpackConfig.plugins.push(new webpack.optimize.OccurrenceOrderPlugin(true));
             webpackConfig.plugins.push(new webpack.NoEmitOnErrorsPlugin());
             
             const { host, port, proxy } = devServerConfig;
