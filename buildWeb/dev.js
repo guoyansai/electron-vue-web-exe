@@ -32,6 +32,7 @@ const dev = {
         const WebpackDevServer = require('webpack-dev-server');
         const devServerConfig = require('../config/devServerConfig.js');
         const webpackConfig = require('./webpack.config.js');
+        webpackConfig.plugins.push(new webpack.optimize.OccurrenceOrderPlugin(true));
         webpackConfig.plugins.push(new webpack.NoEmitOnErrorsPlugin());
 
         // 输出运行环境
@@ -43,22 +44,22 @@ const dev = {
         const compiler = webpack(webpackConfig);
         new WebpackDevServer(
             compiler, {
-                contentBase: webpackConfig.output.path,
-                publicPath: webpackConfig.output.publicPath,
-                inline: true,
-                hot: true,
-                hotOnly: true,
-                quiet: true,
-                progress: true,
-                compress: true,
-                disableHostCheck: true,
-                historyApiFallback: {
-                    disableDotRule: true
-                },
-                port,
-                host,
-                proxy
-            }
+            contentBase: webpackConfig.output.path,
+            publicPath: webpackConfig.output.publicPath,
+            inline: true,
+            hot: true,
+            hotOnly: true,
+            quiet: true,
+            progress: true,
+            compress: true,
+            disableHostCheck: true,
+            historyApiFallback: {
+                disableDotRule: true
+            },
+            port,
+            host,
+            proxy
+        }
         ).listen(port, host, err => {
             if (err) return console.log(err);
         });
@@ -74,10 +75,10 @@ const dev = {
                 console.log(chalk.red(`${key}:${stats.compilation.errors[key]}`));
             });
             console.log(chalk.green(`time：${(stats.endTime - stats.startTime) / 1000} s\n`) + chalk.white('调试完毕'));
-            consoleInfo.runTime(devServerConfig.runTime);//输出运行环境
+            consoleInfo.runTime(devServerConfig.currEnv);//输出运行环境
             if (devServerConfig.openBrowserAfterComplete) {
                 const cmd = os.platform() === 'win32' ? 'explorer' : 'open';
-                require('child_process').exec(`${cmd} 'http://${host}:${port}'`);
+                require('child_process').exec(`${cmd} http://${host}:${port}`);
                 devServerConfig.openBrowserAfterComplete = false;
             }
             console.log(`Listening at http://${host}:${port}`);

@@ -75,9 +75,11 @@ var webpackBaseConfig = {
                         options: {
                             sourceMap: true
                         }
-                    },
-                    {
-                        loader: 'postcss-loader'
+                    }, {
+                        loader: 'postcss-loader',
+                        options: {
+                            plugins: [Autoprefixer]
+                        }
                     }
                 ])
             },
@@ -92,10 +94,18 @@ var webpackBaseConfig = {
                         }
                     },
                     {
-                        loader: 'postcss-loader'
+                        loader: 'postcss-loader',
+                        options: {
+                            plugins: [Autoprefixer]
+                        }
                     },
                     {
-                        loader: 'less-loader'
+                        loader: 'less-loader',
+                        options: {
+                            lessOptions: {
+                                javascriptEnabled: true
+                            }
+                        }
                     }
                 ])
             },
