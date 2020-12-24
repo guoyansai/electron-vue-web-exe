@@ -24,8 +24,8 @@ const dev = {
     // 写出上下文
     writeContext() {
         // 得到上下文
-        const context = require('../src/render/libs/interface/baseContext.js');
-        fs.writeFileSync(path.join(__dirname, '../src/render/libs/interface/context.js'), `module.exports = ${JSON.stringify(context, null, 4)}`);
+        const context = require('../config/baseContext.js');
+        fs.writeFileSync(path.join(__dirname, '../config/context.js'), `module.exports = ${JSON.stringify(context, null, 4)}`);
     },
     // 启动调试
     runDev() {

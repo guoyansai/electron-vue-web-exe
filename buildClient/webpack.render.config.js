@@ -5,7 +5,7 @@ const path = require('path');
 const VueLoaderPlugin = require('vue-loader/lib/plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const context = require('../src/render/libs/interface/context.js');
+const context = require('../config/context.js');
 
 // 是否是调试模式
 const devMode = process.env.NODE_ENV === 'development';

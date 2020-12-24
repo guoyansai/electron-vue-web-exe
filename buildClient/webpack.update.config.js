@@ -7,7 +7,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const VueLoaderPlugin = require('vue-loader/lib/plugin');
 const Autoprefixer = require('autoprefixer');
-const context = require('../src/render/libs/interface/context.js');
+const context = require('../config/context.js');
 module.exports ={
     mode: process.env.NODE_ENV,
     entry: {

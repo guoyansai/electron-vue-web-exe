@@ -1,4 +1,4 @@
 module.exports = {
-    "name": "/pageContext",
+    "name": "",
     "api": "/api"
 }

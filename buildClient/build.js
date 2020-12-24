@@ -58,11 +58,11 @@ const build = {
     // 写出上下文
     writeContext() {
         // 得到上下文
-        const context = require('../src/render/libs/interface/baseContext.js');
+        const context = require('../config/baseContext.js');
         // 得到各环境服务地址
         const { serverUrl } = require('../config/proxyConfig.js');
         context.api = serverUrl[this.setup.versionType] + context.api;
-        fs.writeFileSync(path.join(__dirname, '../src/render/libs/interface/context.js'), `module.exports = ${JSON.stringify(context, null, 4)}`);
+        fs.writeFileSync(path.join(__dirname, '../config/context.js'), `module.exports = ${JSON.stringify(context, null, 4)}`);
     },
     // 打包
     buildApp() {
