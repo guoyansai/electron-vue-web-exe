@@ -1,8 +1,8 @@
 <!-- render>views>index.vue -->
 <template>
     <div class="content">
-        <h1>order page！！！！</h1>
-        <button @click="goHome">go home</button>
+        <h1>test page!a1</h1>
+        <button @click="goHome">回主页</button>
     </div>
 </template>
 
@@ -17,4 +17,4 @@ export default {
     }
 }
 </script>
-<style></style>
+<style lang="less" scoped></style>

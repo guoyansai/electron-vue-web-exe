@@ -1,4 +1,4 @@
 module.exports = {
-    "name": "",
+    "name": "/",
     "api": "/api"
 }

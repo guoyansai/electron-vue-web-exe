@@ -18,7 +18,7 @@ var webpackBaseConfig = {
         main: ['@babel/polyfill', './src/render/index.js']
     },
     output: {
-        path: path.resolve(process.cwd(), 'dist'),
+        path: path.resolve(process.cwd(), './dist/'),
         publicPath: '/',
         filename: `.${context.name}/js/[name]${devMode ? '' : '-[hash:8]'}.js`,
         chunkFilename: `.${context.name}/js/[name]${devMode ? '' : '-[hash]'}.js`,

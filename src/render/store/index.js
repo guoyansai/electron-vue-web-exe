@@ -8,9 +8,10 @@ const store = new Vuex.Store({
     strict: true,
     state: {
         userInfo: {
-            name: 'Asai.cc',
-            address: 'beijing'
-        }
+            name: 'asai',
+            address: 'nanjing'
+        },
+        click:0
     },
     getters: {},
     mutations,

@@ -1,41 +1,38 @@
 <template>
-    <div class="content">
-        <h3>当前渲染进程版本号：{{version.version.join('.')}}</h3>
-        <h1>Welcome to electron-vue-web-exe!111</h1>
-        <h2>name:{{userInfo.name}}</h2>
-        <h2>address:{{userInfo.address}}</h2>
-        <button @click="changeAddress">设置address为tianjin</button>
-        <!-- <button @click="toOrderPage">去订单页</button> -->
-        <router-link to="order" tag="button">去订单页</router-link>
-    </div>
+  <div class="home">
+    <h1>electron-vue</h1>
+    <h2>name:{{userInfo.name}}</h2>
+    <h2>address:{{userInfo.address}}</h2>
+    <button @click="changeLang">翻译</button>
+    <button @click="addClick">点击次数{{click}}</button>
+    <button @click="toTestPage">去测试页</button>
+  </div>
 </template>
 
 <script>
-import { mapState, mapMutations, mapActions } from "vuex";
-import version from '@config/version.js';
+import { mapState, mapMutations } from "vuex";
 export default {
-    data() {
-        return {
-            version
-        }
+  computed: {
+    ...mapState(["userInfo", "click"])
+  },
+  methods: {
+    ...mapMutations(["setUserInfo", "setClick"]),
+    changeLang() {
+      this.setUserInfo({
+        name: "阿赛",
+        address: "南京"
+      });
     },
-    computed: {
-        ...mapState(["userInfo"])
+    addClick() {
+      this.setClick(this.click + 1);
     },
-    methods: {
-        ...mapActions(['getUserInfo']),
-        ...mapMutations(['setUserInfo']),
-        changeAddress() {
-            this.setUserInfo({
-                address: "tianjin"
-            });
-        },
-        toOrderPage() {
-            this.$router.push({
-                name: "order"
-            });
-        }
+    toTestPage() {
+      this.$router.push({
+        name: "test"
+      });
     }
+  }
 };
 </script>
-<style></style>
+<style lang="less" scoped>
+</style>
