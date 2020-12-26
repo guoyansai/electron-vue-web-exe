@@ -107,7 +107,7 @@ module.exports ={
         alias: {
             '@': path.resolve(__dirname, '../src'),
             '@config': path.resolve(__dirname, '../config'),
-            '@images': path.resolve(__dirname, '../src/render/libs/images')
+            '@images': path.resolve(__dirname, '../src/render/static/images')
         }
     },
     plugins: [

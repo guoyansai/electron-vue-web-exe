@@ -18,8 +18,8 @@ var webpackBaseConfig = {
         main: ['@babel/polyfill', './src/render/index.js']
     },
     output: {
-        path: path.resolve(process.cwd(), './dist/'),
-        publicPath: '/',
+        path: path.resolve(process.cwd(), 'dist'),
+        publicPath: '',
         filename: `.${context.name}/js/[name]${devMode ? '' : '-[hash:8]'}.js`,
         chunkFilename: `.${context.name}/js/[name]${devMode ? '' : '-[hash]'}.js`,
     },
@@ -146,7 +146,7 @@ var webpackBaseConfig = {
         alias: {
             '@': path.resolve(process.cwd(), 'src'),
             '@config': path.resolve(__dirname, '../config'),
-            '@images': path.resolve(__dirname, '../src/render/libs/images')
+            '@images': path.resolve(__dirname, '../src/render/static/images')
         }
     },
     plugins: [

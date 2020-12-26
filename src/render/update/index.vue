@@ -28,7 +28,7 @@
 </template>
 <script>
 const { ipcRenderer, remote } = require('electron');
-const { hasKey, getVal } = require('@/render/libs/js/settingsInfo.js');
+const { hasKey, getVal } = require('@/base/js/settingsInfo.js');
 const setup = require('@config/version.js');
 const axios = require('axios');
 const path = require('path');

@@ -2,7 +2,7 @@ import Vue from 'vue';
 import VueRouter from 'vue-router';
 import store from './store/index.js';
 import routers from './router/index.js';
-import index from './app.vue';
+import app from './app.vue';
 import './static/css/global.css';
 
 Vue.use(VueRouter);
@@ -32,16 +32,6 @@ let router = new VueRouter({
     routes: routers
 })
 
-//取消 Vue 所有的日志与警告
-Vue.config.silent = true;
-const app = new Vue({
-    el: '#app',
-    router: router,
-    store: store,
-    render: h => h(index)
-});
-
-
 //获取原型对象上的push函数
 const originalPush = VueRouter.prototype.push
 //修改原型对象中的push方法
@@ -49,4 +39,11 @@ VueRouter.prototype.push = function push(location) {
     return originalPush.call(this, location).catch(err => err)
 }
 
-window.myApp = app;
+//取消 Vue 所有的日志与警告
+Vue.config.silent = true;
+new Vue({
+    el: '#app',
+    router: router,
+    store: store,
+    render: h => h(app)
+});
